@@ -1,5 +1,6 @@
 from app.core.config import Settings, get_settings
 
+
 def test_settings_defaults() -> None:
     settings = Settings()
     assert settings.APP_NAME == "Local GenAI Data Assistant"
