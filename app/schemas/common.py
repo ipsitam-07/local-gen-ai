@@ -1,5 +1,6 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from typing import Any, Literal
+
 from pydantic import BaseModel, Field
 
 
@@ -18,7 +19,7 @@ class HealthResponse(BaseModel):
     status: Literal["ok", "degraded", "error"]
     version: str = "0.1.0"
     environment: str
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
     dependencies: list[DependencyStatus] = Field(default_factory=list)
 
 

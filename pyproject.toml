@@ -56,7 +56,7 @@ select = [
     "UP",     # pyupgrade
     "ARG",    # unused arguments
 ]
-ignore = ["E501"]  # line length handled by formatter
+ignore = ["E501", "ARG001"]  # line length handled by formatter; ARG001 ignored for FastAPI endpoint signatures
 
 [tool.mypy]
 python_version = "3.12"
